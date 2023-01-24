@@ -1,0 +1,23 @@
+.logoSection {
+    background: #40CEE2;
+    width: 338px;
+    height: 220px;
+    position: absolute;
+
+}
+
+.bookmark {
+    color: #FFFFFF;
+    background: #F65E5D;
+    height: 220px;
+}
+
+.triangle {
+    height: 210px;
+    width: 90px;
+    clip-path: polygon(0 210px, 90px 105px, 0 0);
+    left: 338px;
+    top: 0;
+    background: #40CEE2;
+    position: absolute;
+}
