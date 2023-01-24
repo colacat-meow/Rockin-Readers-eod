@@ -26,7 +26,7 @@ class Header extends Component<{}, { showMenu: boolean }> {
       <>
         <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
           <Container fluid className={styles.logoSection}>
-            <Navbar.Brand href="https://www.etsy.com/shop/TsWreathsAndThings" className="d-flex align-items-center" color="#0d1321">
+            <Navbar.Brand href="/" className="d-flex align-items-center" color="#0d1321">
               <Image
                 src={`${logo.src}`}
                 alt="Rockin Readers Logo"
