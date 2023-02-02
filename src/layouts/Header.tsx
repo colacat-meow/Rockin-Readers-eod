@@ -3,13 +3,13 @@ import { Container, Navbar, Image } from "react-bootstrap"
 import Link from "next/link"
 import logo from "public/logo.png"
 import styles from "src/styles/Header.module.scss"
-import withWidthHOC from "@/hooks/withWidthHOC"
 
-class Header extends Component<{ width: number }, { showMenu: boolean }> {
+class Header extends Component<{}, { showMenu: boolean, width: number }> {
   constructor(props: { width: number } | Readonly<{ width: number }>) {
     super(props)
     this.state = {
       showMenu: false,
+      width: 0
     }
   }
 
@@ -19,12 +19,24 @@ class Header extends Component<{ width: number }, { showMenu: boolean }> {
     })
   }
 
+  updateWidth = () => {
+    this.setState({width: window.innerWidth})
+  }
+
+  componentDidMount(): void {
+    window.addEventListener("resize", this.updateWidth)
+  }
+
+  componentWillUnmount(): void {
+    window.removeEventListener("resize", this.updateWidth)
+  }
+
   render() {
     const menuStyles = [styles.hamburger]
     if (this.state.showMenu) {
       menuStyles.push(styles.toggle)
     }
-    if (this.props.width >= 1200) {
+    if (this.state.width >= 1200) {
       return (
         <>
           <Navbar collapseOnSelect expand="lg" className={styles.navbar}>
@@ -87,4 +99,4 @@ class Header extends Component<{ width: number }, { showMenu: boolean }> {
   }
 }
 
-export default withWidthHOC(Header)
+export default Header
