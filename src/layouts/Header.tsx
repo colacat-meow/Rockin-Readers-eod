@@ -74,6 +74,11 @@ class Header extends Component<{ width: number }, { showMenu: boolean }> {
             <Container className={styles.bookmarkSmall}>
               <h2>Excuse our book-dust!</h2>
               <p>A new Rockin Readers is coming soon</p>
+              <p>
+                <Link href="mailto:contact@rockinreaders.com">
+                  Contact Us
+                </Link>
+              </p>
             </Container>
           </Navbar>
         </>
